@@ -78,7 +78,7 @@ find ~/boost_1_69_0 -name "any.hpp" 2>/dev/null
 ```
 В данном выражении 
 
-*2>/dev/null
+*2>/dev/null - подавляет ошибки доступа (например, если у вас нет прав на чтение некоторых директорий).
 
 ```
 /home/liza/boost_1_69_0/boost/spirit/home/support/algorithm/any.hpp
