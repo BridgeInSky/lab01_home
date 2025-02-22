@@ -103,7 +103,7 @@ find ~/boost_1_69_0 -name "any.hpp" 2>/dev/null
   7. Выведите в консоль все файлы, где упоминается последовательность boost::asio.
 
 ```
-
+grep -rnw ~/boost_1_69_0/ -e 'boost::asio' >> ~/'Рабочий стол'/asio.txt
 ```
 -r — рекурсивный поиск по всем файлам в директории и её поддиректориях.
 
@@ -113,6 +113,8 @@ find ~/boost_1_69_0 -name "any.hpp" 2>/dev/null
 
  -e 'boost::asio' — шаблон для поиска.
 
+Результат работы 
+https://github.com/BridgeInSky/lab01_home/blob/main/asio.txt
 
   8. Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
 ```
