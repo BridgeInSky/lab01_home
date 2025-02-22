@@ -177,7 +177,7 @@ du -ah ~/boost-libs >> ~/'Рабочий стол'/result.txt
   Результат работы операции записали в файл, чтобы результаты было удобно использовать
 
   Результат:
-
+```
 2,7M	/home/liza/boost-libs/libboost_regex.a
 24K	/home/liza/boost-libs/libboost_stacktrace_addr2line.a
 2,0M	/home/liza/boost-libs/libboost_locale.a
@@ -213,7 +213,7 @@ du -ah ~/boost-libs >> ~/'Рабочий стол'/result.txt
 2,7M	/home/liza/boost-libs/libboost_math_tr1.a
 4,0K	/home/liza/boost-libs/libboost_exception.a
 30M	/home/liza/boost-libs
-
+```
   11. Найдите топ10 самых "тяжёлых".
 ```
 du -ah ~/boost-libs | sort -rh | head -n 11 >> ~/'Рабочий стол'/result.txt
@@ -225,7 +225,7 @@ du -ah ~/boost-libs | sort -rh | head -n 11 >> ~/'Рабочий стол'/resul
 head -n 11 — выводит только первые 11 строк (первая строка - сама директория)
 
 Результат:
-
+```
 30M	/home/liza/boost-libs
 4,5M	/home/liza/boost-libs/libboost_wave.a
 2,7M	/home/liza/boost-libs/libboost_regex.a
@@ -237,3 +237,4 @@ head -n 11 — выводит только первые 11 строк (перв�
 2,0M	/home/liza/boost-libs/libboost_locale.a
 1,6M	/home/liza/boost-libs/libboost_program_options.a
 1,2M	/home/liza/boost-libs/libboost_serialization.a
+```
