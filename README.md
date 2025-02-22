@@ -108,7 +108,103 @@ find ~/boost_1_69_0 -name "any.hpp" 2>/dev/null
 /home/liza/boost_1_69_0/boost/fusion/include/any.hpp
 
   8. Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
+```
+cd ~/boost_1_69_0
 
-  11. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
-  12. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
-  13. Найдите топ10 самых "тяжёлых".
+./bootstrap.sh
+
+./b2 --prefix=~/'Рабочий стол'/Boost install
+```
+Результат работы программы представлен в файле
+result.txt
+
+  9. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
+```
+mkdir -p ~/boost-libs
+cd ./boost_1_69_0/~/'Рабочий стол'/Boost
+cp lib/*.a ~/boost-libs
+ls ~/ boost-libs
+```
+В результате работы последней операции видим:
+```
+libboost_atomic.a      libboost_math_tr1l.a
+libboost_chrono.a      libboost_prg_exec_monitor.a
+libboost_container.a   libboost_program_options.a
+libboost_context.a     libboost_random.a
+libboost_contract.a    libboost_regex.a
+libboost_date_time.a   libboost_serialization.a
+libboost_exception.a   libboost_stacktrace_addr2line.a
+libboost_fiber.a       libboost_stacktrace_backtrace.a
+libboost_filesystem.a  libboost_stacktrace_basic.a
+libboost_graph.a       libboost_stacktrace_noop.a
+libboost_iostreams.a   libboost_system.a
+libboost_locale.a      libboost_test_exec_monitor.a
+libboost_math_c99.a    libboost_timer.a
+libboost_math_c99f.a   libboost_unit_test_framework.a
+libboost_math_c99l.a   libboost_wave.a
+libboost_math_tr1.a    libboost_wserialization.a
+libboost_math_tr1f.a
+```
+Значит, все статические библиотеки перенесены успешно.
+  10. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
+```
+du -ah ~/boost-libs >> ~/'Рабочий стол'/result.txt
+```
+Результат работы операции записали в файл, чтобы результаты было удобно использовать
+
+Результат:
+
+2,7M	/home/liza/boost-libs/libboost_regex.a
+24K	/home/liza/boost-libs/libboost_stacktrace_addr2line.a
+2,0M	/home/liza/boost-libs/libboost_locale.a
+2,7M	/home/liza/boost-libs/libboost_math_tr1l.a
+152K	/home/liza/boost-libs/libboost_date_time.a
+232K	/home/liza/boost-libs/libboost_fiber.a
+2,6M	/home/liza/boost-libs/libboost_math_tr1f.a
+464K	/home/liza/boost-libs/libboost_math_c99l.a
+540K	/home/liza/boost-libs/libboost_math_c99.a
+4,0K	/home/liza/boost-libs/result.txt
+56K	/home/liza/boost-libs/libboost_timer.a
+1,2M	/home/liza/boost-libs/libboost_serialization.a
+148K	/home/liza/boost-libs/libboost_container.a
+1,6M	/home/liza/boost-libs/libboost_program_options.a
+80K	/home/liza/boost-libs/libboost_random.a
+796K	/home/liza/boost-libs/libboost_wserialization.a
+848K	/home/liza/boost-libs/libboost_graph.a
+16K	/home/liza/boost-libs/libboost_stacktrace_basic.a
+4,0K	/home/liza/boost-libs/libboost_stacktrace_noop.a
+4,0K	/home/liza/boost-libs/libboost_atomic.a
+24K	/home/liza/boost-libs/libboost_context.a
+236K	/home/liza/boost-libs/libboost_chrono.a
+212K	/home/liza/boost-libs/libboost_prg_exec_monitor.a
+416K	/home/liza/boost-libs/libboost_filesystem.a
+332K	/home/liza/boost-libs/libboost_contract.a
+448K	/home/liza/boost-libs/libboost_math_c99f.a
+4,5M	/home/liza/boost-libs/libboost_wave.a
+2,3M	/home/liza/boost-libs/libboost_test_exec_monitor.a
+4,0K	/home/liza/boost-libs/libboost_system.a
+20K	/home/liza/boost-libs/libboost_stacktrace_backtrace.a
+172K	/home/liza/boost-libs/libboost_iostreams.a
+2,3M	/home/liza/boost-libs/libboost_unit_test_framework.a
+2,7M	/home/liza/boost-libs/libboost_math_tr1.a
+4,0K	/home/liza/boost-libs/libboost_exception.a
+30M	/home/liza/boost-libs
+
+  11. Найдите топ10 самых "тяжёлых".
+```
+du -ah ~/boost-libs | sort -rh | head -n 11 >> ~/'Рабочий стол'/result.txt
+```
+
+Результат:
+
+30M	/home/liza/boost-libs
+4,5M	/home/liza/boost-libs/libboost_wave.a
+2,7M	/home/liza/boost-libs/libboost_regex.a
+2,7M	/home/liza/boost-libs/libboost_math_tr1l.a
+2,7M	/home/liza/boost-libs/libboost_math_tr1.a
+2,6M	/home/liza/boost-libs/libboost_math_tr1f.a
+2,3M	/home/liza/boost-libs/libboost_unit_test_framework.a
+2,3M	/home/liza/boost-libs/libboost_test_exec_monitor.a
+2,0M	/home/liza/boost-libs/libboost_locale.a
+1,6M	/home/liza/boost-libs/libboost_program_options.a
+1,2M	/home/liza/boost-libs/libboost_serialization.a
