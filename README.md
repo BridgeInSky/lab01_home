@@ -78,7 +78,9 @@ find ~/boost_1_69_0 -name "any.hpp" 2>/dev/null
 ```
 В данном выражении 
 
-*2>/dev/null - подавляет ошибки доступа (например, если у вас нет прав на чтение некоторых директорий).
+*2>/dev/null - подавляет ошибки доступа (например, если нет прав на чтение некоторых директорий).
+
+Мы получили такой список:
 
 ```
 /home/liza/boost_1_69_0/boost/spirit/home/support/algorithm/any.hpp
@@ -92,8 +94,20 @@ find ~/boost_1_69_0 -name "any.hpp" 2>/dev/null
 /home/liza/boost_1_69_0/boost/fusion/algorithm/query/any.hpp
 /home/liza/boost_1_69_0/boost/fusion/include/any.hpp
 ```
-  8. Выведите в консоль все файлы, где упоминается последовательность boost::asio.
-  9. Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
-  10. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
-  11. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
-  12. Найдите топ10 самых "тяжёлых".
+  7. Выведите в консоль все файлы, где упоминается последовательность boost::asio.
+
+/home/liza/boost_1_69_0/boost/spirit/home/support/algorithm/any.hpp
+/home/liza/boost_1_69_0/boost/any.hpp
+/home/liza/boost_1_69_0/boost/proto/detail/any.hpp
+/home/liza/boost_1_69_0/boost/xpressive/detail/utility/any.hpp
+/home/liza/boost_1_69_0/boost/hana/any.hpp
+/home/liza/boost_1_69_0/boost/hana/fwd/any.hpp
+/home/liza/boost_1_69_0/boost/type_erasure/any.hpp
+/home/liza/boost_1_69_0/boost/fusion/algorithm/query/detail/any.hpp
+/home/liza/boost_1_69_0/boost/fusion/algorithm/query/any.hpp
+/home/liza/boost_1_69_0/boost/fusion/include/any.hpp
+
+  8. Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
+  11. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
+  12. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
+  13. Найдите топ10 самых "тяжёлых".
