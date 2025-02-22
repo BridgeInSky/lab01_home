@@ -1,15 +1,20 @@
 # lab01_home
-  1. Скачайте библиотеку boost с помощью утилиты wget. Адрес для скачивания https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz.
+  1. Скачайте библиотеку boost с помощью утилиты wget. Адрес для скачивания
+https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz.
+
 ```bash
 wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
 ```
+
 С помощью данной функции мы скачали библиотеку boost. Теперь проверим, есть ли в папке tasks наш файл.
+
 ```
 ls
 ```
 На выходе получили
 boost_1_69_0.tar.gz
 Архив скачан
+
   2. Разархивируйте скаченный файл в директорию ~/boost_1_69_0
 ```
 tar -xzf boost_1_69_0.tar.gz -C ~/
@@ -25,6 +30,7 @@ ls ~
  BridgeInSky    Видео       Изображения  'Рабочий стол'
 ```
 Среди элементов списка видим название нашего файла. Значит, всё прошло успешно.
+
   3. Подсчитайте количество файлов в директории ~/boost_1_69_0 не включая вложенные директории.
 ```
  find ~/boost_1_69_0 -maxdepth 1 -type f | wc -l
@@ -96,16 +102,17 @@ find ~/boost_1_69_0 -name "any.hpp" 2>/dev/null
 ```
   7. Выведите в консоль все файлы, где упоминается последовательность boost::asio.
 
-/home/liza/boost_1_69_0/boost/spirit/home/support/algorithm/any.hpp
-/home/liza/boost_1_69_0/boost/any.hpp
-/home/liza/boost_1_69_0/boost/proto/detail/any.hpp
-/home/liza/boost_1_69_0/boost/xpressive/detail/utility/any.hpp
-/home/liza/boost_1_69_0/boost/hana/any.hpp
-/home/liza/boost_1_69_0/boost/hana/fwd/any.hpp
-/home/liza/boost_1_69_0/boost/type_erasure/any.hpp
-/home/liza/boost_1_69_0/boost/fusion/algorithm/query/detail/any.hpp
-/home/liza/boost_1_69_0/boost/fusion/algorithm/query/any.hpp
-/home/liza/boost_1_69_0/boost/fusion/include/any.hpp
+```
+
+```
+-r — рекурсивный поиск по всем файлам в директории и её поддиректориях.
+
+ n — выводит номер строки, где найдено совпадение.
+
+ w — ищет точное совпадение слова (чтобы избежать частичных совпадений).
+
+ -e 'boost::asio' — шаблон для поиска.
+
 
   8. Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
 ```
