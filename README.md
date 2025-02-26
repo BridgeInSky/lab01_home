@@ -6,8 +6,18 @@ https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz.
 ```bash
 wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
 ```
-
-  С помощью данной функции мы скачали библиотеку boost. Теперь проверим, есть ли в папке tasks наш файл.
+На выходе получим:
+```
+HTTP response 301  [https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz]
+Adding URL: https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/
+HTTP response 301  [https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/]
+Adding URL: https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/download
+HTTP response 302  [https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz/download]
+Adding URL: https://downloads.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?ts=gAAAAABnu08bVTCwNGk_VeQFfggtWlYHHTTP response 302  [https://downloads.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?ts=gAAAAABnu08bVTCwNGk_VeQFAdding URL: https://deac-riga.dl.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz?viasf=1
+Saving 'boost_1_69_0.tar.gz'
+HTTP response 200 OK [https://deac-riga.dl.sourceforge.net/project/boost/boost/1.87.0/boost_1_69_0.tar.gz?viasf=1]
+boost_1_69_0.tar.gz  100% [=============================================================================>]  147.73M  846.15KB/s
+                          [Files: 1  Bytes: 147.73M [879.96KB/s] Redirects: 4  Todo: 0  Errors: 0        ]
 
 ```
 ls
