@@ -18,7 +18,8 @@ Saving 'boost_1_69_0.tar.gz'
 HTTP response 200 OK [https://deac-riga.dl.sourceforge.net/project/boost/boost/1.87.0/boost_1_69_0.tar.gz?viasf=1]
 boost_1_69_0.tar.gz  100% [=============================================================================>]  147.73M  846.15KB/s
                           [Files: 1  Bytes: 147.73M [879.96KB/s] Redirects: 4  Todo: 0  Errors: 0        ]
-
+```
+Теперь проверим содержимое
 ```
 ls
 ```
@@ -224,6 +225,7 @@ du -ah ~/boost-libs >> ~/'Рабочий стол'/result.txt
 4,0K	/home/liza/boost-libs/libboost_exception.a
 30M	/home/liza/boost-libs
 ```
+
   11. Найдите топ10 самых "тяжёлых".
 ```
 du -ah ~/boost-libs | sort -rh | head -n 11 >> ~/'Рабочий стол'/result.txt
